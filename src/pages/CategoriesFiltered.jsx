@@ -8,20 +8,21 @@ function CategoriesFiltered() {
 
     const [products, setProducts] = useState([])
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/products?categoryId=${params.id}`)
-      .then(resp => resp.json())
-      .then(productsFromServer => setProducts(productsFromServer))
-  }, [])
+    useEffect(() => {
+        fetch(`http://localhost:3000/products?categoryId=${params.id}`)
+            .then(resp => resp.json())
+            .then(productsFromServer => setProducts(productsFromServer))
+    }, [])
 
-  if (products.length === 0) return <NotFound />
+    if (products.length === 0) return <NotFound />
 
     return (
         <section className="products-container main-wrapper">
             <ul className="products-container__list">
                 {products.map(product =>
-                        <Product product={product} key={product.id} />
-                    )}
+                    // @ts-ignore
+                    <Product product={product} key={product.id} />
+                )}
             </ul>
         </section>
     )

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import '../styles/header.css'
 import SearchIcon from "@material-ui/icons/Search"
+import DoneIcon from '@material-ui/icons/Done';
 
 function Header() {
 
@@ -9,6 +10,8 @@ function Header() {
       <header className="header"    >
         <div className="header__logo" >
           <Link to='/products' >Drin</Link>
+          <DoneIcon className="header__doneIcon" />
+
         </div>
         <div className="header__search">
           <input type="search" placeholder="Search product..." className="searach"
