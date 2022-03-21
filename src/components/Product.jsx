@@ -5,7 +5,6 @@ function Product({ product }) {
 
 
         <li>
-
             <Link to={`/products/${product.id}`} >
                 <article className="product-item">
                     <img src={product.image}
