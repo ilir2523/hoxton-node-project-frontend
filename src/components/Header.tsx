@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import '../styles/header.css'
+import SearchIcon from "@material-ui/icons/Search"
 
 function Header() {
 
@@ -7,38 +8,31 @@ function Header() {
     <>
       <header className="header"    >
         <div className="header__logo" >
-          Vjosa
+          <Link to='/products' >Drin</Link>
         </div>
-        <nav className="header__nav">
-          <li>
-            <input type="search" placeholder="Search product..." className="searach"
-              onChange={(e) => {
-                console.log(e.target.value)
-              }}
-            />
-          </li>
-        </nav>
+        <div className="header__search">
+          <input type="search" placeholder="Search product..." className="searach"
+            onChange={(e) => {
+              console.log(e.target.value)
+            }}
+
+          />
+          <SearchIcon className="header__searchIcon" />
+        </div>
         <nav className="header__icons">
           <ul>
             <li>
               <Link to='/signIn'> <img src="./src/images/account_circle_white_24dp.svg"></img> </Link>
             </li>
+            <li>
+              <Link to='/basket' >Basket</Link>
+            </li>
+            <li>
+              <Link to='/categories' >Categories</Link>
+            </li>
           </ul>
         </nav>
       </header>
-      <nav className=''>
-        <ul>
-          <li>
-            <Link to='/products' >Home</Link>
-          </li>
-          <li>
-            <Link to='/categories' >Categories</Link>
-          </li>
-          <li>
-            <Link to='/basket' >Basket</Link>
-          </li>
-        </ul>
-      </nav>
     </>
   );
 }
