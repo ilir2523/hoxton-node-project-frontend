@@ -25,10 +25,13 @@ function Header() {
               <Link to='/signIn'> <img src="./src/images/account_circle_white_24dp.svg"></img> </Link>
             </li>
             <li>
+              <Link to='/categories' >Categories</Link>
+            </li>
+            <li>
               <Link to='/basket' >Basket</Link>
             </li>
             <li>
-              <Link to='/categories' >Categories</Link>
+              <Link to='/basket' >Cart</Link>
             </li>
           </ul>
         </nav>
