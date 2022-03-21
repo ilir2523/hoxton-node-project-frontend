@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header";
+import Footer from "./components/Footer"
 import ProductDetails from "./pages/ProductDetails.jsx";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
@@ -32,7 +33,7 @@ function App() {
         <Route path='/signIn' element={<SignIn />} />
         <Route path='/signUp' element={<SignUp />} />
       </Routes>
-      
+      <Footer />
     </>
   )
 }
