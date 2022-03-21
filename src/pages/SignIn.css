@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    background-color: #ffffff;
+}
+
+.signIn-page {
+    display: grid;
+    place-items: center;
+    margin-top: 3rem;
+    font: sans-serif;
+}
+
+.signIn-header {
+    color: #000000;
+    margin: 2rem;
+}
+
+.signIn-box {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    place-items: left;
+    border: 1px solid #e5e5e5;
+    border-radius: 7px;
+    padding: 50px;
+    gap: 0.5rem;
+}
+
+.signIn-form {
+    display: grid;
+    grid-auto-flow: row;
+    place-items: left center;
+    gap: 0.5rem;
+}
+
+.signIn-input {
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #e5e5e5;
+    transition: 0.3s;
+    outline: none;
+}
+
+.signIn-input:focus {
+    border: 1px solid #f07752;
+    box-shadow: 0px 0px 1px 1px  #f07752;
+}
+
+.signIn-button {
+    color: #000000;
+    background-color: #f2ce73;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 2px solid #a88734;
+    border-radius: 3px;
+}
+
+.signIn-button:hover {
+    background-color: #e7ba49;
+}
+
+.brake {
+    color: #8d8d8d;
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+.signUp-button {
+    color: #000000;
+    background-color: #ebedf0;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    font-weight: 300;
+}
+
+.signOut-div {
+    justify-content: center;
+    text-align: center;
+}
+
+.signOut-button {
+    color: #000000;
+    background-color: #ebedf0;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 2px solid #e5e5e5;
+    border-radius: 3px;
+    font-weight: 300;
+}
