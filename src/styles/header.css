@@ -1,0 +1,56 @@
+/* Header */
+
+.header {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    align-items: center;
+    background-color: #131921;
+    width: 100vw;
+    height: 100px;
+    padding: 1rem;;
+}
+
+
+.header__search {
+ display: grid;
+ grid-template-columns: auto 10px;
+}
+
+
+
+.header nav ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-right: 0.8rem;
+}
+
+
+
+header nav ul a:hover {
+    color: rgb(241, 241, 236);
+}
+
+
+
+.header__logo {
+   font-size: 3rem;
+   font-weight: 600;
+   
+}
+
+.header__logo a {
+    color: white;
+}
+
+.header ul a {
+    color: white;
+}
+
+.header__searchIcon {
+    background-color: #cd9042;
+}
