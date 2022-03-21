@@ -2,7 +2,10 @@ import { Link } from "react-router-dom"
 
 function Product({ product }) {
     return (
+
+
         <li>
+
             <Link to={`/products/${product.id}`} >
                 <article className="product-item">
                     <img src={product.image}
