@@ -8,9 +8,11 @@ import SignUp from "./pages/SignUp";
 import Products from "./pages/Products";
 import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
+import Categories from "./pages/Categories";
 
 
 import { useEffect, useState } from 'react';
+import { Category } from '@material-ui/icons';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -26,6 +28,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Navigate to='/products' />} />
+        <Route path='/categories' element={<Categories />} />
         <Route path='/products' element={<Products products={products} />} />
         <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/basket' element={<Orders />} />
