@@ -1,5 +1,14 @@
 /* Products Container */
 
+.products-container__main-wrapper {
+  background-color: #eceeed;
+}
+
+.home__image {
+  z-index: -1;
+}
+
+
 
 /* 
 .products-container__list {
