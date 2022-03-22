@@ -1,19 +1,18 @@
 /* Products Container */
 
 .products-container__main-wrapper {
-  background-color: #eceeed;
+  background-color: rgb(175 238 169);
 }
 
-.home__image {
-  z-index: -1;
-}
 
 
 .products-container__list {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
     justify-content: center;
     grid-gap: 2rem;
+    padding: 1rem;
+    margin: 1rem;
   } 
 
 /* Product Item */
@@ -25,8 +24,7 @@
     height: 100%;
     padding: 2rem;
     place-items: center;
-    background-color: var(--white);
-    border: 1px solid var(--grey);
+    background-color: white;
   }
   
   .product-item h3 {

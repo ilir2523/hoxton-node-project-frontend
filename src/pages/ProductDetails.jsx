@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { validateUser, postOrder } from '../functions/Functions.jsx'
+import '../styles/productDetails.css'
 
 
 function ProductDetails() {
@@ -25,11 +26,13 @@ function ProductDetails() {
   if (product.title === undefined) return <main>Picture not found</main>
 
   return (
-    <section className="product-detail main-wrapper">
-      <img
-        src={product.image}
-        alt={product.title}
-      />
+    <section className="product-detail">
+      <div className='image_container'>
+        <img
+          src={product.image}
+          alt={product.title}
+        />
+      </div>
 
       <div className="product-detail__side">
         <h2>{product.title}</h2>
@@ -41,6 +44,13 @@ function ProductDetails() {
         <Link to='/basket'>
           <button onClick={() => postOrder(product.id, user.id)}>Add to basket</button>
         </Link>
+      </div>
+
+      <div className='comment_section'>
+        <h3>Review For this Product</h3>
+        <p>I am really happy i bought this</p>
+        <p>Is this new?</p>
+        <input type="text" placeholder='Enter your comment' />
       </div>
     </section>
   )

@@ -1,0 +1,38 @@
+
+/* Product Detail */
+.product-detail {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: 1fr 200px 200px;
+    padding: 2rem;
+    height: 100%;
+}
+
+.product-detail > img {
+    align-self: center;
+  }
+  
+.product-detail__side {
+    display: grid;
+     border-left: 2px solid;
+    border-right: 2px solid;
+    gap: 4rem;
+}
+  
+
+.product-detail__side button {
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: royalblue;
+}
+
+.product-detail__side button:hover {
+    background-color: var(--blue);
+   
+}
+  
+.product-price {
+      color: black;
+
+}
