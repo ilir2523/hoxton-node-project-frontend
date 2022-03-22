@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Orders() {
     const [user, setUser] = useState(null)
+    console.log(user)
 
     useEffect(() => {
         validateUser(setUser)
@@ -14,20 +15,21 @@ export default function Orders() {
             <section className="basket-container">
                 <h2>Your Orders</h2>
                 <ul>
-                    {user.orders.map(order => {
+                {console.log(user.orders[0].orderItems)}
+                    {user.orders[0].orderItems.map(orderItem => {
                         return(
-                        <li key={order.item.id}>
+                        <li key={orderItem.id}>
                             <article className="basket-container__item">
-                            <Link to={`/products/${order.item.id}`}>
+                            <Link to={`/products/${orderItem.id}`}>
                                 <img
-                                    src={order.item.image}
-                                    alt={order.item.title}
+                                    src={orderItem.item.image}
+                                    alt={orderItem.item.title}
                                     width="90"
                                 />
                             </Link>
-                            <p>{order.item.title}</p>
+                            <p>{orderItem.item.title}</p>
                             <p>
-                                Qty: {order.quantity}
+                                Qty: {orderItem.quantity}
                                 {/* <select value={basketItem.quantity} onChange={(e) => {
                                     handleChange(basketItem, e)
                                 }}>
@@ -37,13 +39,13 @@ export default function Orders() {
                                     <option value="3">3</option>
                                 </select> */}
                             </p>
-                            <p>Item total: £{calculateItemPrice(order)}</p>
+                            <p>Item total: £{calculateItemPrice(orderItem)}</p>
                             </article>
                         </li>
                         )
                     })}
                 </ul>
-                <h3>Your total: £{calculateTotalPrice(user.orders)}</h3>
+                {/* <h3>Your total: £{calculateTotalPrice(user.orders.orderItems)}</h3> */}
             </section>
         )
 
