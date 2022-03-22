@@ -37,7 +37,7 @@ function Footer() {
                 </ul>
 
             </div>
-            <p> &copy; 2022 hoxtonacademy.com</p>
+            {/* <p> &copy; 2022 hoxtonacademy.com</p> */}
 
         </div>
     )
