@@ -73,7 +73,7 @@ export function calculateTotalPrice(orders) {
     return total.toFixed(2)
 }
 
-export function postOrder(itemId, orderId) {
+export function postOrder(itemId, orderId, quantity) {
     fetch('http://localhost:4001/orderItems', {
       method: "POST",
       headers: {
@@ -81,7 +81,7 @@ export function postOrder(itemId, orderId) {
       },
       body: JSON.stringify({
         itemId: itemId,
-        quantity: 1,
+        quantity: quantity,
         orderId: orderId
       })
     }).then(resp => resp.json())

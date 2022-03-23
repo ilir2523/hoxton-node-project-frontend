@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { validateUser, calculateItemPrice, calculateTotalPrice } from '../functions/Functions.jsx'
 import { Link } from 'react-router-dom'
+import '../App.css';
 
 export default function Orders() {
     const [user, setUser] = useState(null)
@@ -39,13 +40,13 @@ export default function Orders() {
                                     <option value="3">3</option>
                                 </select> */}
                             </p>
-                            <p>Item total: £{calculateItemPrice(orderItem)}</p>
+                            <p>Item total: £{orderItem.item.price}</p>
                             </article>
                         </li>
                         )
                     })}
                 </ul>
-                {/* <h3>Your total: £{calculateTotalPrice(user.orders.orderItems)}</h3> */}
+                <h3>Your total: £{user.orders[0].total}</h3>
             </section>
         )
 

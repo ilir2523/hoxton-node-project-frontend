@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { validateUser, calculateItemPrice, calculateTotalPrice } from '../functions/Functions.jsx'
+import { validateUser, calculateItemPrice, calculateTotalPrice, postOrder } from '../functions/Functions.jsx'
 import { Link } from 'react-router-dom'
 
 export default function Basket() {
@@ -16,31 +16,36 @@ export default function Basket() {
                 <h2>Your Cart Items</h2>
                 <ul>
                     {user.basketItems.map(basketItem => {
-                        return(
-                        <li key={basketItem.id}>
-                            <article className="basket-container__item">
-                            <Link to={`/products/${basketItem.id}`}>
-                                <img
-                                    src={basketItem.item.image}
-                                    alt={basketItem.item.title}
-                                    width="90"
-                                />
-                            </Link>
-                            <p>{basketItem.item.title}</p>
-                            <p>
-                                Qty: {basketItem.quantity}
-                                {/* <select value={basketItem.quantity} onChange={(e) => {
-                                    handleChange(basketItem, e)
-                                }}>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select> */}
-                            </p>
-                            <p>Item total: £{calculateItemPrice(basketItem)}</p>
-                            </article>
-                        </li>
+                        return (
+                            <li key={basketItem.id}>
+                                <article className="basket-container__item">
+                                    <Link to={`/products/${basketItem.id}`}>
+                                        <img
+                                            src={basketItem.item.image}
+                                            alt={basketItem.item.title}
+                                            width="90"
+                                        />
+                                    </Link>
+                                    <p>{basketItem.item.title}</p>
+                                    <p>
+                                        Qty: {basketItem.quantity}
+                                        <select value={basketItem.quantity} onChange={(e) => {
+                                            handleChange(basketItem, e)
+                                        }}>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </p>
+                                    <p>Item total: £{calculateItemPrice(basketItem)}</p>
+                                    {console.log(basketItem.item.id)}
+                                    <Link to='/orders'>
+                                        <button onClick={() => postOrder(basketItem.item.id, user.orders[0].id, basketItem.quantity) }>Order</button>
+                                    </Link>
+                                </article>
+
+                            </li>
                         )
                     })}
                 </ul>

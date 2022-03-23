@@ -41,9 +41,6 @@ function ProductDetails() {
         </p> */}
         <h1 className="product-price">£{product.price}</h1>
         {/* <!-- Once you click in this button, the user should be redirected to the Basket page --> */}
-        <Link to='/orders'>
-          <button onClick={() => postOrder(product.id, user.orders[0].id)}>Order</button>
-        </Link>
         <Link to='/cartItems'>
           <button onClick={() => postToBasketItems(product.id, user.id)}>Add to Cart</button> 
         </Link>

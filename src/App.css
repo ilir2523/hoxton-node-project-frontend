@@ -61,24 +61,24 @@ img {
 }
 
 .basket-container > ul {
-  border: 1px solid var(--grey);
+  border: 1px solid #000000;
   border-radius: 5px;
   height: 60vh;
   padding: 2rem;
   overflow-y: auto;
   scrollbar-width: thin;
-  background-color: var(--white);
+  background-color: #ffffff;
 }
 
 .basket-container li {
   margin-top: 1rem;
   padding: 1rem;
-  border-top: 1px solid var(--grey);
+  border-top: 1px solid #000000;
 }
 
 .basket-container li:last-of-type {
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid #000000;
 }
 
 .basket-container h3 {
@@ -90,6 +90,6 @@ img {
 .basket-container__item {
   display: grid;
   align-items: center;
-  grid-template-columns: auto 3fr 1fr 1fr;
+  grid-template-columns: auto 3fr 1fr 1fr 1fr;
   column-gap: 2rem;
 }
