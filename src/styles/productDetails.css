@@ -21,15 +21,15 @@
   
 
 .product-detail__side button {
-    border: solid 1px black;
     border-radius: 8px;
     padding: 5px;
-    background-color: royalblue;
+    background-color: #ff9900;
+    color: #ffffff;
+    border: none;
 }
 
 .product-detail__side button:hover {
-    background-color: var(--blue);
-   
+    background-color: #febd69;
 }
   
 .product-price {

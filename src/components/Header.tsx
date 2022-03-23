@@ -31,10 +31,10 @@ function Header() {
               <Link to='/categories' >Categories</Link>
             </li>
             <li>
-              <Link to='/basket' >Basket</Link>
+              <Link to='/orders' >Orders</Link>
             </li>
             <li>
-              <Link to='/basket' >Cart</Link>
+              <Link to='/cartItems' >Cart</Link>
             </li>
           </ul>
         </nav>
