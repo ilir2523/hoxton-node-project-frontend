@@ -9,35 +9,50 @@ function Header() {
     <>
       <header className="header"    >
         <div className="header__logo" >
-          <Link to='/products' >Drin</Link>
-          <DoneIcon className="header__doneIcon" />
+          <div>
+            <Link to='/products' >Drin</Link>
+            <DoneIcon className="header__doneIcon" />
+          </div>
+          <div className="header_deliver">
+            <p>Deliever to</p>
+            <p> <b>Albania</b> </p>
+
+          </div>
 
         </div>
+
         <div className="header__search">
-          <input type="search" placeholder="Search product..." className="searach"
-            onChange={(e) => {
-              console.log(e.target.value)
-            }}
 
-          />
-          <SearchIcon className="header__searchIcon" />
+          <div className="header__Categories">
+            <Link to='/categories' >Categories</Link>
+          </div>
+          <div className="header__searchInput">
+            <input type="search" placeholder="Search product..." className="header__searchInput"
+              onChange={(e) => {
+                console.log(e.target.value)
+              }}
+
+            />
+            <SearchIcon className="header__searchIcon" />
+          </div>
         </div>
-        <nav className="header__icons">
-          <ul>
-            <li>
-              <Link to='/signIn'> <img src="./src/images/account_circle_white_24dp.svg"></img> </Link>
-            </li>
-            <li>
-              <Link to='/categories' >Categories</Link>
-            </li>
-            <li>
-              <Link to='/orders' >Orders</Link>
-            </li>
-            <li>
-              <Link to='/cartItems' >Cart</Link>
-            </li>
-          </ul>
-        </nav>
+
+        <div className="header__sideOptions">
+          <nav className="header__icons">
+            <ul>
+              <li>
+                <Link to='/signIn'>Accounts </Link>
+              </li>
+              <li>
+                <Link to='/orders' >Orders</Link>
+              </li>
+              <li>
+                <Link to='/cartItems' >Cart</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
       </header>
     </>
   );
