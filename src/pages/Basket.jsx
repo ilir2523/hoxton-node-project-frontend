@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { validateUser, calculateItemPrice, calculateTotalPrice, postOrder } from '../functions/Functions.jsx'
+import { validateUser, calculateItemPrice, calculateTotalPrice, postOrder, handleChange } from '../functions/Functions.jsx'
 import { Link } from 'react-router-dom'
 
 export default function Basket() {
@@ -17,9 +17,9 @@ export default function Basket() {
                 <ul>
                     {user.basketItems.map(basketItem => {
                         return (
-                            <li key={basketItem.id}>
+                            <li key={basketItem.item.id}>
                                 <article className="basket-container__item">
-                                    <Link to={`/products/${basketItem.id}`}>
+                                    <Link to={`/products/${basketItem.item.id}`}>
                                         <img
                                             src={basketItem.item.image}
                                             alt={basketItem.item.title}
@@ -31,6 +31,7 @@ export default function Basket() {
                                         Qty: {basketItem.quantity}
                                         <select value={basketItem.quantity} onChange={(e) => {
                                             handleChange(basketItem, e)
+                                            validateUser(setUser)
                                         }}>
                                             <option value="0">0</option>
                                             <option value="1">1</option>
@@ -41,7 +42,7 @@ export default function Basket() {
                                     <p>Item total: £{calculateItemPrice(basketItem)}</p>
                                     {console.log(basketItem.item.id)}
                                     <Link to='/orders'>
-                                        <button onClick={() => postOrder(basketItem.item.id, user.orders[0].id, basketItem.quantity) }>Order</button>
+                                        <button onClick={() => postOrder(basketItem.item.id, user.orders[0].id, user.id, basketItem.quantity) }>Order</button>
                                     </Link>
                                 </article>
 
@@ -49,7 +50,7 @@ export default function Basket() {
                         )
                     })}
                 </ul>
-                {/* <h3>Your total: £{calculateTotalPrice(user.orders.orderItems)}</h3> */}
+                <h3>Your total: £{calculateTotalPrice(user.basketItems)}</h3>
             </section>
         )
 

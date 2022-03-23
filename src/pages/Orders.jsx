@@ -19,9 +19,9 @@ export default function Orders() {
                 {console.log(user.orders[0].orderItems)}
                     {user.orders[0].orderItems.map(orderItem => {
                         return(
-                        <li key={orderItem.id}>
+                        <li key={orderItem.item.id}>
                             <article className="basket-container__item">
-                            <Link to={`/products/${orderItem.id}`}>
+                            <Link to={`/products/${orderItem.item.id}`}>
                                 <img
                                     src={orderItem.item.image}
                                     alt={orderItem.item.title}
@@ -31,16 +31,8 @@ export default function Orders() {
                             <p>{orderItem.item.title}</p>
                             <p>
                                 Qty: {orderItem.quantity}
-                                {/* <select value={basketItem.quantity} onChange={(e) => {
-                                    handleChange(basketItem, e)
-                                }}>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select> */}
                             </p>
-                            <p>Item total: £{orderItem.item.price}</p>
+                            <p>Item total: £{(orderItem.item.price * orderItem.quantity)}</p>
                             </article>
                         </li>
                         )
@@ -61,5 +53,4 @@ export default function Orders() {
                 </button>
             </div>
         )
-
 } 
