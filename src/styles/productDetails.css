@@ -14,9 +14,12 @@
   
 .product-detail__side {
     display: grid;
-     border-left: 2px solid;
-    border-right: 2px solid;
+    /* border-left: 2px solid;
+    border-right: 2px solid; */
     gap: 4rem;
+    padding: 1rem;
+    border: solid 1px black;
+    border-radius: 8px;
 }
   
 
@@ -34,5 +37,19 @@
   
 .product-price {
       color: black;
+
+
+}
+
+.comment_section {
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+}
+
+.comment_section p {
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 1rem;
 
 }
