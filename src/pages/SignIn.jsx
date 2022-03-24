@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default function SignIn() {
   const [user, setUser] = useState(null)
-  console.log(user)
 
   useEffect(() => {
     validateUser(setUser)
@@ -15,7 +14,7 @@ export default function SignIn() {
     return (
       <div className="signIn-page">
         <header className="signIn-header">
-          <h1>Cramazon</h1>
+          <h1>Drin</h1>
         </header>
 
         <div className="signIn-box">
@@ -34,14 +33,14 @@ export default function SignIn() {
             <input type="email" className="signIn-input" name="email"></input>
             <label className="signIn-password-label" htmlFor="password">Password</label>
             <input type="password" className="signIn-input" name="password"></input>
-            <button className="signIn-button" type="submit" form="signInForm" >Sign In</button>
+            <button className="signIn-button" type="submit" form="signInForm">Sign In</button>
           </form>
         </div>
         <div className="brake">
-          <h5>New to Cramazon?</h5>
+          <h5>New to Drin?</h5>
         </div>
         <div>
-          <button className="signUp-button"> <Link to='/signUp'> Create your Cramazon account </Link></button>
+          <button className="signUp-button"> <Link to='/signUp'> Create your Drin account </Link></button>
         </div>
       </div>
     )
@@ -50,8 +49,32 @@ export default function SignIn() {
     return (
       <>
         <div className="signOut-div">
-          <h1>Do you want to sign out {user.name}?</h1>
-          <button className="signOut-button" onClick={() => signOut(setUser)}>Sign Out</button>
+          <h1>Welcome to Drin website {user.name}!!!</h1>
+          <div className="navigate-bar">
+
+            <Link to="/">Home</Link>
+            <Link to='/categories'>Categories </Link>
+            <Link to='/orders' >Orders</Link>
+            <Link to='/cartItems' >Cart</Link>
+
+          </div>
+
+          <div className="navigate-bar">
+            <Link to='/changePassword'>Change Password</Link>
+            <Link to='#' onClick={() => signOut(setUser)}> Sign Out </Link>
+          </div>
+
+          {/* <div className="account-data" >
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
+            <form >
+              <label>Change your password:</label>
+              <input></input>
+              <input></input>
+              <input></input>
+              <button></button>
+            </form>
+          </div> */}
         </div>
       </>
     )

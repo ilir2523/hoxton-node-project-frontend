@@ -80,8 +80,36 @@
 }
 
 .signOut-div {
-    justify-content: center;
-    text-align: center;
+    /* justify-content: center;
+    text-align: center; */
+    height: 100vh;
+    display: grid;
+    place-items:  center;
+}
+
+.navigate-bar {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.5rem
+}
+
+.navigate-bar a {
+    text-decoration: none;
+    border: 2px solid #8d8d8d;
+    border-radius: 10px;
+    color: #000000;
+    padding: 3rem;
+}
+
+.navigate-bar a:hover {
+    background-color: #d3d3d3ee;
+}
+
+
+.account-data form {
+    display: grid;
+    grid-auto-flow: row;
+    border: 1px solid #000000
 }
 
 .signOut-button {
@@ -93,3 +121,4 @@
     border-radius: 3px;
     font-weight: 300;
 }
+

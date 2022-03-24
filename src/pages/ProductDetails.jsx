@@ -1,25 +1,24 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { validateUser, postOrder, postToBasketItems } from '../functions/Functions.jsx'
+import { validateUser, postToBasketItems, createComment, fetchProduct } from '../functions/Functions.jsx'
 import '../styles/productDetails.css'
-
+import '../App.css'
 
 function ProductDetails() {
   const params = useParams()
 
   const [product, setProduct] = useState(null)
   const [user, setUser] = useState(null)
+  console.log(product)
 
   useEffect(() => {
     validateUser(setUser)
   }, [])
 
-
   useEffect(() => {
-    fetch(`http://localhost:4001/items/${params.id}`)
-      .then(resp => resp.json())
-      .then(productFromServer => setProduct(productFromServer))
+    fetchProduct(params, setProduct) 
   }, [])
+
 
   if (product === null) return <main>Loading...</main>
 
@@ -33,25 +32,51 @@ function ProductDetails() {
           alt={product.title}
         />
       </div>
-
-      <div className="product-detail__side">
-        <h2>{product.title}</h2>
-        {/* <p>
+      <div className="detail">
+        <div className="product-detail__side" >
+          <h2>{product.title}</h2>
+          {/* <p>
           {product.description}
         </p> */}
-        <h1 className="product-price">£{product.price}</h1>
-        {/* <!-- Once you click in this button, the user should be redirected to the Basket page --> */}
-        <Link to='/cartItems'>
-          <button onClick={() => postToBasketItems(product.id, user.id)}>Add to Cart</button> 
-        </Link>
+          <h1 className="product-price">£{product.price}</h1>
+          <Link to='/cartItems'>
+            <button onClick={() => postToBasketItems(product.id, user.id)}>Add to Cart</button>
+          </Link>
+        </div>
+
+        <div className='comment_section'>
+          <section>
+            <h3>Review For this Product</h3>
+            <ul>
+              {product.Comment.map(comment => 
+              <li key={comment.id}>
+                <p>{comment.user.name}: "{comment.comment}"</p>
+              </li>)}
+            </ul>
+          </section>
+
+          <form
+            className='detailsForm'
+            name='form'
+            onSubmit={function (event) {
+              event.preventDefault()
+              const content = event.target.comment.value
+              createComment(content, user.id, product.id )
+              fetchProduct(params, setProduct)
+              event.target.reset()
+            }}>
+            <input
+              type="text"
+              name='comment'
+              placeholder='Write your comment'
+            />
+            <button className='detailsButton' htmlFor="form">Post</button>
+          </form>
+        </div>
       </div>
 
-      <div className='comment_section'>
-        <h3>Review For this Product</h3>
-        <p>I am really happy i bought this</p>
-        <p>Is this new?</p>
-        <input type="text" placeholder='Enter your comment' />
-      </div>
+
+
     </section>
   )
 }

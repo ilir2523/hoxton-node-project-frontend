@@ -138,3 +138,23 @@ export function handleChange(item, e) {
         })
     }
 }
+
+export function createComment(content, userId, itemId) {
+    fetch('http://localhost:4001/comments', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            comment: content,
+            userId: userId,
+            itemId: itemId,
+        })
+    })
+}
+
+export function fetchProduct(params, setProduct) {
+    fetch(`http://localhost:4001/items/${params.id}`)
+    .then(resp => resp.json())
+    .then(productFromServer => setProduct(productFromServer))
+}

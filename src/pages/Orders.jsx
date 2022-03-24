@@ -16,8 +16,7 @@ export default function Orders() {
             <section className="basket-container">
                 <h2>Your Orders</h2>
                 <ul>
-                {console.log(user.orders[0].orderItems)}
-                    {user.orders[0].orderItems.map(orderItem => {
+                    {user.orders.map((order) => order.orderItems.map(orderItem => {
                         return(
                         <li key={orderItem.item.id}>
                             <article className="basket-container__item">
@@ -36,9 +35,9 @@ export default function Orders() {
                             </article>
                         </li>
                         )
-                    })}
+                    }))}
                 </ul>
-                <h3>Your total: £{user.orders[0].total}</h3>
+                <h3>Your total: £{user.orders.map(order => order.total.toFixed(2))}</h3>
             </section>
         )
 

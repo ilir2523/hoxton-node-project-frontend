@@ -15,7 +15,7 @@ export default function SignUp() {
         return (
             <div className="signIn-page">
                 <header className="signIn-header">
-                    <h1>Cramazon</h1>
+                    <h1>Drin</h1>
                 </header>
 
                 <div className="signIn-box">
@@ -38,7 +38,7 @@ export default function SignUp() {
                         <input type="email" className="signIn-input" name="email"></input>
                         <label className="signIn-password-label" htmlFor="password">Password</label>
                         <input type="password" className="signIn-input" name="password"></input>
-                        <button className="signIn-button" type="submit" form="signUpForm" >Sign Up</button>
+                        <button className="signIn-button" type="submit" form="signUpForm"> Sign Up</button>
                     </form>
                 </div>
                 <div className="brake">

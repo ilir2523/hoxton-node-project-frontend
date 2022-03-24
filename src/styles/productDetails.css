@@ -3,7 +3,7 @@
 .product-detail {
     display: grid;
     column-gap: 2rem;
-    grid-template-columns: 1fr 200px 200px;
+    grid-template-columns: 1fr 2fr;
     padding: 2rem;
     height: 100%;
 }
@@ -18,7 +18,7 @@
     border-right: 2px solid; */
     gap: 4rem;
     padding: 1rem;
-    border: solid 1px black;
+    border: solid 1px #eaeded;
     border-radius: 8px;
 }
   
@@ -37,19 +37,45 @@
   
 .product-price {
       color: black;
-
-
 }
 
 .comment_section {
     display: grid;
-    place-content: center;
-    gap: 1rem;
+    grid-template-rows: 1fr 60px;
 }
 
+.comment_section ul {
+    border: 1px solid #eaeded;
+    border-radius: 5px;
+    height: 30vh;
+    padding: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    background-color: #ffffff;
+    display: grid;
+    place-items: start;
+  }
+
+  .comment_section form {
+    display: grid;
+    grid-template-columns: 1fr 50px ;
+    border: 1px solid #eaeded;
+    gap:2px;
+    border-radius: 10px;
+  }
+
+  .comment_section form input {
+
+      padding:20px;
+      border: 1px solid #eaeded;
+
+  }
+.detailsButton {
+    border: 1px solid #febd69;
+    border-radius: 5px;
+}
 .comment_section p {
-    border: solid 1px black;
+    /* border: solid 1px black; */
     border-radius: 10px;
     padding: 1rem;
-
 }
