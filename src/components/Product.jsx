@@ -7,10 +7,10 @@ function Product({ product }) {
                 <article className="product-item">
                     <img src={product.image}
                         alt={product.title} />
-                        <div>
+                    <div>
                         <h3>{product.title} </h3>
                         <h4>${product.price}</h4>
-                        </div>
+                    </div>
                 </article>
             </Link>
         </li>

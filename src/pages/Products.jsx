@@ -1,9 +1,14 @@
 import Product from "../components/Product"
 import '../styles/product.css'
+import { useEffect } from "react"
 
+function Products({ products, setProducts }) {
 
-function Products({ products }) {
-
+    useEffect(() => {
+        fetch('http://localhost:4001/items')
+          .then(resp => resp.json())
+          .then(productsFromServer => setProducts(productsFromServer))
+      }, [])
 
     console.log(products)
 

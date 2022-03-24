@@ -1,7 +1,7 @@
 import Product from "../components/Product"
 import "../styles/categories.css"
 
-function Categories({ products }) {
+function Categories({ products, filterProductsByCategory }) {
     console.log(products)
 
     return (
@@ -9,19 +9,13 @@ function Categories({ products }) {
         <section className="categories-container main-wrapper">
             <section className="filter_section">
                 <ul className="filter_list">
-                    <li>All Products</li>
-                    <li>Tech</li>
-                    <li>House Hold</li>
-                    <li>Clothes</li>
+                    <li onClick={() => filterProductsByCategory('')}>All Products</li>
+                    <li onClick={() => filterProductsByCategory('Tech')}>Tech</li>
+                    <li onClick={() => filterProductsByCategory('House Hold')}>House Hold</li>
+                    <li onClick={() => filterProductsByCategory('Clothes')}>Clothes</li>
+                    <li onClick={() => filterProductsByCategory('Games')}>Games</li>
                 </ul>
             </section>
-            {/* <section className="categories-container__list">
-                 <ul>
-                {categories.map(category =>
-                    <Category category={category} key={category.id} />
-                )}
-                  </ul> 
-            </section> */}
 
             <section className="products-container main-wrapper">
                 <ul className="products-container__list">

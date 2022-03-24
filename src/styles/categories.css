@@ -47,3 +47,15 @@
     font-size: 1.2rem;
     font-weight: 700;
 }
+
+.filter_list li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #ff9900
+}
+
+.filter_list li:hover::after,
+.filter_list li:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}

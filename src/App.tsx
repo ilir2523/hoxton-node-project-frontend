@@ -35,13 +35,23 @@ function App() {
     .then(productsFromServer => setProducts(productsFromServer))}
   }
 
+  function filterProductsByCategory(category) {
+    if (category !== '') {
+      fetch(`http://localhost:4001/items?category=${category}`)
+      .then(resp => resp.json())
+      .then(productsFromServer => setProducts(productsFromServer))
+    } else {fetch(`http://localhost:4001/items`)
+    .then(resp => resp.json())
+    .then(productsFromServer => setProducts(productsFromServer))}
+  }
+
   return (
     <>
       <Header filterProducts={filterProducts}/>
       <Routes>
         <Route index element={<Navigate to='/products' />} />
-        <Route path='/categories' element={<Categories products={products} />} />
-        <Route path='/products' element={<Products products={products} />} />
+        <Route path='/categories' element={<Categories products={products} filterProductsByCategory={filterProductsByCategory} />} />
+        <Route path='/products' element={<Products products={products} setProducts={setProducts} />} />
         <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/orders' element={<Orders />} />
         <Route path='/cartItems' element={<Basket />} />

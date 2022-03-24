@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 export default function Basket() {
     const [user, setUser] = useState(null)
-    console.log(user)
 
     useEffect(() => {
         validateUser(setUser)
@@ -45,7 +44,6 @@ export default function Basket() {
                                         <button onClick={() => postOrder(basketItem.item.id, user.orders[0].id, user.id, basketItem.quantity) }>Order</button>
                                     </Link>
                                 </article>
-
                             </li>
                         )
                     })}
