@@ -137,17 +137,4 @@ export function handleChange(item, e) {
             })
         })
     }
-    // let basketItemsQty = JSON.parse(JSON.stringify(basketItems))
-    // const itemFound = basketItemsQty.find(function (basketItem) {
-    //     return basketItem.id === item.id
-    // })
-    // itemFound.quantity = Number(e.target.value)
-
-    // if (itemFound.quantity === 0) {
-    //     basketItemsQty = basketItemsQty.filter(function (basketItem) {
-    //         return basketItem.quantity > 0
-    //     })
-    // }
-
-    // setBasketItems(basketItemsQty)
 }

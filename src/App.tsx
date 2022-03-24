@@ -23,12 +23,24 @@ function App() {
       .then(productsFromServer => setProducts(productsFromServer))
   }, [])
 
+  function filterProducts(searchValue) {
+    let productsList = JSON.parse(JSON.stringify(products))
+    if (searchValue !== '') {
+      const productsListFilter = productsList.filter(product =>
+        product.title.toLowerCase().includes(searchValue)
+      )
+      setProducts(productsListFilter)
+    } else {fetch(`http://localhost:4001/items?search=${searchValue}`)
+    .then(resp => resp.json())
+    .then(productsFromServer => setProducts(productsFromServer))}
+  }
+
   return (
     <>
-      <Header />
+      <Header filterProducts={filterProducts}/>
       <Routes>
         <Route index element={<Navigate to='/products' />} />
-        <Route path='/categories' element={<Categories />} />
+        <Route path='/categories' element={<Categories products={products} />} />
         <Route path='/products' element={<Products products={products} />} />
         <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/orders' element={<Orders />} />

@@ -10,7 +10,7 @@ function Products({ products }) {
     return (
         <section className="products-container__main-wrapper">
             <div className="div_home__image">
-                <img className="home__image" src="../../public/assets/ImageBanner.jpg" alt="" />
+                <img className="home__image" src="../../assets/ImageBanner.jpg" alt="" />
             </div>
             <ul className="products-container__list">
                 {products.map(product =>

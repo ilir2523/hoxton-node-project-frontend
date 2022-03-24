@@ -15,6 +15,11 @@
     margin: 1rem;
   } 
 
+  .products-container__list a {
+    text-decoration: none;
+    color: #000000
+  }
+
 /* Product Item */
 
 .product-item {
@@ -27,7 +32,13 @@
     background-color: white;
   }
   
-  .product-item h3 {
+  .product-item h3 h4 {
     font-weight: 400;
+    color: black !important;
+  }
+
+  .product-item h4 {
+    text-align: end;
+    font-weight: 900;
   }
   

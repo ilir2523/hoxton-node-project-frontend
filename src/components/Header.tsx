@@ -3,7 +3,7 @@ import '../styles/header.css'
 import SearchIcon from "@material-ui/icons/Search"
 import DoneIcon from '@material-ui/icons/Done';
 
-function Header() {
+function Header({ filterProducts }) {
 
   return (
     <>
@@ -29,7 +29,7 @@ function Header() {
           <div className="header__searchInput">
             <input type="search" placeholder="Search product..." className="header__searchInput"
               onChange={(e) => {
-                console.log(e.target.value)
+                filterProducts(e.target.value)
               }}
 
             />

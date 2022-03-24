@@ -29,15 +29,18 @@
   background-color: var(--white);
 }  */
 
+
 .categories-container.main-wrapper {
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: 200px 1fr;
+    width: 100vw;
 }
 
 .filter_section {
+  padding-top: 3rem;
     display: grid;
-    place-content: center;
+    place-content: start center;
 }
 
 .filter_section ul {
