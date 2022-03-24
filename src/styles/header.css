@@ -115,3 +115,39 @@ header nav ul a:hover {
 .header__searchIcon {
     background-color: #cd9042;
 }
+
+@media screen and (max-width: 800px) {
+    
+    .header_deliver {
+        display: none;
+       
+    }
+
+    .header__search {
+        width: 100px;
+        margin-left: -120px;
+    }
+
+    
+}
+
+@media screen and (max-width: 670px) {
+    
+    .header__logo {
+        display: none;
+       
+    }
+
+    .header__search {
+        width: 100px;
+        margin-left: 20px;
+    }
+
+
+    .header__sideOptions {
+        margin-left: 80px;
+    }
+
+   
+}
+
