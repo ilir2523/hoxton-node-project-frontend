@@ -49,32 +49,28 @@ export default function SignIn() {
     return (
       <>
         <div className="signOut-div">
-          <h1>Welcome to Drin website {user.name}!!!</h1>
+          <h1>Your Account {user.name}!!!</h1>
           <div className="navigate-bar">
 
-            <Link to="/">Home</Link>
-            <Link to='/categories'>Categories </Link>
-            <Link to='/orders' >Orders</Link>
-            <Link to='/cartItems' >Cart</Link>
+            <Link to="/"> <img src='https://images-ext-2.discordapp.net/external/Qp5m5RjFHPIXkwucq6LZGp77zhF6aKa_Sc7f56SVjjg/https/cdn-icons-png.flaticon.com/512/609/609803.png'></img>
+            Home</Link>
+            <Link to='/categories'>
+            <img src='https://cdn-icons-png.flaticon.com/512/3843/3843517.png'></img>
+              Categories </Link>
+            <Link to='/orders' ><img src='https://cdn-icons-png.flaticon.com/512/3500/3500833.png'></img>
+            Orders</Link>
+            <Link to='/cartItems' >
+            <img src='https://cdn-icons-png.flaticon.com/512/891/891462.png'></img>
+              Cart</Link>
+            <Link to='/changePassword' >
+            <img src='https://cdn-icons.flaticon.com/png/512/2665/premium/2665311.png?token=exp=1648203090~hmac=3be414bbdf124f401fd25b2cb5bad7d4'></img>
+              Change Password</Link>
+            <Link to='#' onClick={() => signOut(setUser)}>
+            <img src='https://cdn-icons-png.flaticon.com/512/1828/1828490.png'></img>
+               Sign Out </Link>
 
           </div>
 
-          <div className="navigate-bar">
-            <Link to='/changePassword'>Change Password</Link>
-            <Link to='#' onClick={() => signOut(setUser)}> Sign Out </Link>
-          </div>
-
-          {/* <div className="account-data" >
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <form >
-              <label>Change your password:</label>
-              <input></input>
-              <input></input>
-              <input></input>
-              <button></button>
-            </form>
-          </div> */}
         </div>
       </>
     )

@@ -5,6 +5,8 @@ import Footer from "./components/Footer"
 import ProductDetails from "./pages/ProductDetails.jsx";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import ChangePassword from "./pages/ChangePassword.jsx";
+
 import Products from "./pages/Products";
 import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
@@ -58,6 +60,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path='/signIn' element={<SignIn />} />
         <Route path='/signUp' element={<SignUp />} />
+        <Route path='/changePassword' element={<ChangePassword />} />
       </Routes>
       <Footer />
     </>

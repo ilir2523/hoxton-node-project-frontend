@@ -155,6 +155,29 @@ export function createComment(content, userId, itemId) {
 
 export function fetchProduct(params, setProduct) {
     fetch(`http://localhost:4001/items/${params.id}`)
-    .then(resp => resp.json())
-    .then(productFromServer => setProduct(productFromServer))
+        .then(resp => resp.json())
+        .then(productFromServer => setProduct(productFromServer))
+}
+
+export function changePassword(email, password, newPassword, setUser) {
+    fetch('http://localhost:4001/changePassword', {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: email,
+            password: password,
+            newPassword: newPassword,
+        })
+    }).then(resp => resp.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.error)
+        } else {
+            localStorage.token = data.token
+            setUser(data.user) // data === { user, token }
+            alert('Passwd updated successfully')
+        }
+    })
 }
