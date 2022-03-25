@@ -59,11 +59,17 @@ function ProductDetails() {
             className='detailsForm'
             name='form'
             onSubmit={function (event) {
-              event.preventDefault()
-              const content = event.target.comment.value
-              createComment(content, user.id, product.id )
-              fetchProduct(params, setProduct)
-              event.target.reset()
+              if (user !== null) {
+                event.preventDefault()
+                const content = event.target.comment.value
+                createComment(content, user?.id, product.id )
+                fetchProduct(params, setProduct)
+                event.target.reset()
+              } else {
+                alert("Please Sign-in first.")
+                event.preventDefault()
+                event.target.reset()
+              }
             }}>
             <input
               type="text"
