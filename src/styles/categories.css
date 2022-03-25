@@ -1,40 +1,10 @@
 
- /* .categories-container {
-  height: 100%;
-  margin: 0 auto;
-}
-
-.categories-container__list {
-  display: grid;
-  height: 100%;
-  grid-template-columns: repeat(auto-fit, 300px);
-  grid-gap: 2rem;
-  place-content: center;
-}
-
-.categories-container__list a {
-  display: grid;
-  height: 300px;
-  background-color: var(--random-colour);
-  place-items: center;
-  text-transform: capitalize;
-  text-align: center;
-  color: var(--white);
-  font-size: 2.5rem;
-}
-
-.categories-container__list a:hover {
-  color: var(--random-colour);
-  border: 2px solid var(--random-colour);
-  background-color: var(--white);
-}  */
-
-
 .categories-container.main-wrapper {
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: 200px 1fr;
-    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .filter_section {
