@@ -2,7 +2,6 @@ import Product from "../components/Product"
 import "../styles/categories.css"
 
 function Categories({ products, filterProductsByCategory }) {
-    console.log(products)
 
     return (
 

@@ -5,7 +5,6 @@ import '../App.css';
 
 export default function Orders() {
     const [user, setUser] = useState(null)
-    console.log(user)
 
     useEffect(() => {
         validateUser(setUser)

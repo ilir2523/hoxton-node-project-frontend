@@ -9,7 +9,6 @@ function ProductDetails() {
 
   const [product, setProduct] = useState(null)
   const [user, setUser] = useState(null)
-  console.log(product)
 
   useEffect(() => {
     validateUser(setUser)

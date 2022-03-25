@@ -10,7 +10,6 @@ function Products({ products, setProducts }) {
           .then(productsFromServer => setProducts(productsFromServer))
       }, [])
 
-    console.log(products)
 
     return (
         <section className="products-container__main-wrapper">

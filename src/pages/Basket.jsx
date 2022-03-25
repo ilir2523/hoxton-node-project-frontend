@@ -39,7 +39,7 @@ export default function Basket() {
                                         </select>
                                     </p>
                                     <p>Item total: £{calculateItemPrice(basketItem)}</p>
-                                    {console.log(basketItem.item.id)}
+                                    
                                     <Link to='/orders'>
                                         <button onClick={() => postOrder(basketItem.item.id, user.orders[0].id, user.id, basketItem.quantity) }>Order</button>
                                     </Link>

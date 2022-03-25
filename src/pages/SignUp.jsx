@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function SignUp() {
     const [user, setUser] = useState(null)
-    console.log(user)
+
 
     useEffect(() => {
         validateUser(setUser)

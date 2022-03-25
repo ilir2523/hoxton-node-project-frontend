@@ -5,7 +5,6 @@ import "../styles/changePassword.css"
 
 function ChangePassword() {
   const [user, setUser] = useState(null)
-  console.log(user)
 
   useEffect(() => {
     validateUser(setUser)
